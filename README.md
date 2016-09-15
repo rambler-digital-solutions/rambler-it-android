@@ -1,2 +1,2 @@
 # rambler-it-android
-Android client for it.rambler-co.ru
+Android client for http://it.rambler-co.ru
