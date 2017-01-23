@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'realm-android'
 
 ext.retrofitVersion = '2.1.0'
 ext.daggerVersion = '2.7'

@@ -11,5 +11,5 @@ data class EventAttributes(val name: String, val kind: String,
                            val deleted: Boolean = false,
                            val brand: Brand,
                            val tech: Tech,
-                           val lectures: List<Lecture>) {
+                           val lectures: List<Lecture>) : ParentDto {
 }

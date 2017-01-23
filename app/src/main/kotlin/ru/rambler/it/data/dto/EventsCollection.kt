@@ -1,4 +1,4 @@
 package ru.rambler.it.data.dto
 
-data class EventsCollection(val data: List<Event>) {
+data class EventsCollection(val data: List<Event>) : ParentDto {
 }

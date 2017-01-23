@@ -9,5 +9,5 @@ data class Speaker(val id: Int,
                    val job: String,
                    val company: String,
                    val image: String?,
-                   @SerializedName("social_profiles") val socialProfiles: List<SocialProfile>) {
+                   @SerializedName("social_profiles") val socialProfiles: List<SocialProfile>) : ParentDto {
 }
