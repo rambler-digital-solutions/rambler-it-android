@@ -3,8 +3,8 @@ package ru.rambler.it.data.network
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
-import ru.rambler.it.data.cache.Mapper
-import ru.rambler.it.data.dbo.EventDb
+import ru.rambler.it.data.cache.mapDto
+import ru.rambler.it.data.dbo.EventDbo
 import ru.rambler.it.data.dto.Brand
 import ru.rambler.it.data.dto.Event
 import ru.rambler.it.data.dto.EventAttributes
@@ -24,9 +24,8 @@ class CacheDataProviderTest {
     @Test
     fun testMap_DTO_in_DBO() {
         val event = createTestEvent()
-        var eventDb: EventDb? = EventDb()
-        Mapper(event, eventDb)
-        assert(eventDb?.attributes?.brand != null && eventDb?.attributes?.tech != null)
+        var eventDb = mapDto(event) as EventDbo
+        assert(eventDb.attributes?.brand != null && eventDb?.attributes?.tech != null)
     }
 
 

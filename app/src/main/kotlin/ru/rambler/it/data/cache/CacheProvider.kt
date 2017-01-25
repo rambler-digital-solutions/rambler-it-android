@@ -2,20 +2,16 @@ package ru.rambler.it.data.cache
 
 import io.realm.Realm
 import io.realm.RealmObject
-import ru.rambler.it.data.dbo.EventDb
-import ru.rambler.it.data.dto.Event
+import ru.rambler.it.data.dto.ParentDto
 import rx.Observable
 
 class CacheProvider : RealmObjectProvider {
 
-    override fun mapToCache(data: Observable<List<Event>>): Observable<List<EventDb>> = data
+    override fun mapToCache(data: Observable<List<out ParentDto>>): Observable<List<out RealmObject>> = data
             .flatMapIterable { it }
-            .map {
-                val eventDbo = EventDb()
-                Mapper(it, eventDbo)
-                eventDbo
-            }
+            .map { mapDto(it) }
             .toList()
+            .map { it }
 
 
     override fun addRealmObject(data: RealmObject): Boolean {
