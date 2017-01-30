@@ -1,5 +1,6 @@
 package ru.rambler.it.data.cache
 
+import io.realm.RealmList
 import io.realm.RealmObject
 import ru.rambler.it.data.dbo.*
 import ru.rambler.it.data.dto.*
@@ -7,8 +8,10 @@ import java.lang.reflect.Field
 import java.util.*
 
 
+fun mapToDbo(data: List<out ParentDto>): List<out RealmObject> = data
+        .map(::mapDto)
 
-fun mapDto(source: ParentDto): RealmObject {
+private fun mapDto(source: ParentDto): RealmObject {
     val dest: RealmObject = makeDbo(source) ?: throw Exception("FUN makeDbo FAILED")
 
     val sourceClass: Class<Any> = source.javaClass
@@ -52,6 +55,10 @@ fun mapDto(source: ParentDto): RealmObject {
                 if (sourceInnerObject is ParentDto) {
                     val destInnerObject = mapDto(sourceInnerObject)
                     destField.set(dest, destInnerObject)
+                } else if (sourceInnerObject is List<*> && sourceInnerObject.size > 0 && sourceInnerObject[0] is ParentDto) {
+                    val destInnerList = RealmList<RealmObject>()
+                    sourceInnerObject.mapTo(destInnerList) { mapDto(it as ParentDto) }
+                    destField.set(dest, destInnerList)
                 }
             }
         }
@@ -60,7 +67,7 @@ fun mapDto(source: ParentDto): RealmObject {
     return dest
 }
 
-fun makeDbo(dto: ParentDto): RealmObject? {
+private fun makeDbo(dto: ParentDto): RealmObject? {
     when (dto) {
         is Brand -> return BrandDbo()
         is Event -> return EventDbo()
