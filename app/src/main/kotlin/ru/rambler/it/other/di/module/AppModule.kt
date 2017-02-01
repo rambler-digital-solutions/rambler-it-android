@@ -3,6 +3,8 @@ package ru.rambler.it.other.di.module
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import ru.rambler.it.data.network.ApiModule
+import ru.rambler.it.data.network.ITRamblerApi
 import ru.rambler.it.presentation.RamblerITApplication
 import javax.inject.Singleton
 
@@ -13,5 +15,11 @@ class AppModule(private val application: RamblerITApplication) {
     @Singleton
     fun provideAppContext(): Context {
         return application.applicationContext
+    }
+
+    @Provides
+    @Singleton
+    fun provideITRamblerApi(): ITRamblerApi {
+        return ApiModule.itRamblerApi
     }
 }
