@@ -5,13 +5,13 @@ import ru.rambler.it.data.dbo.LectureDbo
 import ru.rambler.it.data.dbo.MaterialDbo
 import ru.rambler.it.data.dbo.TagDbo
 import ru.rambler.it.data.dto.Lecture
-import javax.inject.Inject
+
 
 class LectureMapper : DataMapper<Lecture, LectureDbo> {
 
-    @Inject lateinit var tagMapper: TagMapper
-    @Inject lateinit var materialMapper: MaterialMapper
-    @Inject lateinit var speakerMapper: SpeakerMapper
+    private val tagMapper = TagMapper()
+    private val materialMapper = MaterialMapper()
+    private val speakerMapper = SpeakerMapper()
 
     override fun map(dto: Lecture): LectureDbo {
         val tagList = RealmList<TagDbo>()
