@@ -4,14 +4,14 @@ import io.realm.RealmList
 import ru.rambler.it.data.dbo.EventAttributesDbo
 import ru.rambler.it.data.dbo.LectureDbo
 import ru.rambler.it.data.dto.EventAttributes
-import javax.inject.Inject
+
 
 
 class EventAttributesMapper : DataMapper<EventAttributes, EventAttributesDbo>{
 
-    @Inject lateinit var brandMapper: BrandMapper
-    @Inject lateinit var techMapper: TechMapper
-    @Inject lateinit var lectureMapper: LectureMapper
+    private val brandMapper = BrandMapper()
+    private val techMapper = TechMapper()
+    private val lectureMapper = LectureMapper()
 
     override fun map(dto: EventAttributes): EventAttributesDbo {
         val lectureList = RealmList<LectureDbo>()
