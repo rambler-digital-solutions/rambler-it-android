@@ -4,7 +4,8 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import ru.rambler.it.data.network.ApiModule
-import ru.rambler.it.data.network.ITRamblerApi
+import ru.rambler.it.data.network.NetworkDataProvider
+import ru.rambler.it.data.network.NetworkDataProviderImpl
 import ru.rambler.it.presentation.RamblerITApplication
 import javax.inject.Singleton
 
@@ -19,7 +20,7 @@ class AppModule(private val application: RamblerITApplication) {
 
     @Provides
     @Singleton
-    fun provideITRamblerApi(): ITRamblerApi {
-        return ApiModule.itRamblerApi
+    fun provideNetworkDataProvider(): NetworkDataProvider {
+        return NetworkDataProviderImpl(ApiModule.itRamblerApi)
     }
 }
