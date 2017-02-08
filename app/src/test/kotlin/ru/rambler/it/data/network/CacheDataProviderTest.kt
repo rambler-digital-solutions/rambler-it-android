@@ -1,21 +1,14 @@
 package ru.rambler.it.data.network
 
 import com.google.gson.Gson
-import org.junit.Before
 import org.junit.Test
-import ru.rambler.it.data.cache.mapToDbo
 import ru.rambler.it.data.dbo.EventDbo
 import ru.rambler.it.data.dto.*
 import ru.rambler.it.data.mappers.EventMapper
-import ru.rambler.it.other.di.module.AppModule
-import ru.rambler.it.presentation.RamblerITApplication
 import java.io.File
 import java.util.*
-import javax.inject.Inject
 
 class CacheDataProviderTest {
-
-    @Be
 
 
     @Test

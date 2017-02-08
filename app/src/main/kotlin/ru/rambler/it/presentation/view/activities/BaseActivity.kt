@@ -16,6 +16,7 @@ abstract class BaseActivity<P : BasePresenter<*>> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         inject()
         super.onCreate(savedInstanceState)
+        presenter.onCreate(savedInstanceState)
     }
 
     @CallSuper
