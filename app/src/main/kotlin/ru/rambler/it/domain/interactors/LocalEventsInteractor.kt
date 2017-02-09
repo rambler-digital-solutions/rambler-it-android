@@ -11,11 +11,10 @@ import javax.inject.Inject
 /**
  * Created by a.tkachenko on 08.02.17.
  */
-class EventsInteractor @Inject constructor (networkProvider: NetworkDataProvider, cacheProvider: CacheProvider, threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread)
+class LocalEventsInteractor @Inject constructor(networkProvider: NetworkDataProvider, cacheProvider: CacheProvider, threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread)
     : Interactor<Void, List<Event>>(networkProvider, cacheProvider, threadExecutor, postExecutionThread) {
 
     override fun buildObservable(param: Void?): Observable<List<Event>> {
-        return networkProvider.getAllEvents()
-                .flatMap { cacheProvider.saveEvents(it) }
+        return cacheProvider.getEventsFromCache()
     }
 }

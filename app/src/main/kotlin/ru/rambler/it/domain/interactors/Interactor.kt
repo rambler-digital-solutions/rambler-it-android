@@ -13,9 +13,9 @@ abstract class Interactor<P, R>(protected val networkProvider: NetworkDataProvid
                                 protected val threadExecutor: ThreadExecutor,
                                 protected val postExecutionThread: PostExecutionThread) {
 
-    protected abstract fun buildObservable(param: P): Observable<R>
+    protected abstract fun buildObservable(param: P? = null): Observable<R>
 
-    open fun getObservable(param: P): Observable<R> {
+    open fun getObservable(param: P? = null): Observable<R> {
         return buildObservable(param)
                 .subscribeOn(Schedulers.from(threadExecutor))
                 .observeOn(postExecutionThread.getScheduler())

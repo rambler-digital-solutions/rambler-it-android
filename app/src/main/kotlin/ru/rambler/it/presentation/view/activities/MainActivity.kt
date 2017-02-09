@@ -2,7 +2,6 @@ package ru.rambler.it.presentation.view.activities
 
 import android.os.Bundle
 import ru.rambler.it.R
-import ru.rambler.it.other.di.component.DaggerMainScreenComponent
 import ru.rambler.it.other.di.getAppComponent
 import ru.rambler.it.other.di.module.MainScreenModule
 import ru.rambler.it.presentation.presenter.MainScreenPresenter
@@ -16,9 +15,6 @@ class MainActivity : BaseActivity<MainScreenPresenter>(), MainScreenView {
     }
 
     override fun inject() {
-        DaggerMainScreenComponent.builder()
-                .appComponent(getAppComponent())
-                .mainScreenModule(MainScreenModule(this))
-                .build().inject(this)
+        getAppComponent()?.plus(MainScreenModule(this))?.inject(this)
     }
 }

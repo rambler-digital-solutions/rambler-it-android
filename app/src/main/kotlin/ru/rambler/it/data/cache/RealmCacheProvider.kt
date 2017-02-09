@@ -3,8 +3,9 @@ package ru.rambler.it.data.cache
 import ru.rambler.it.domain.entities.Event
 import rx.Observable
 import java.util.*
+import javax.inject.Inject
 
-class RealmCacheProvider : CacheProvider {
+class RealmCacheProvider @Inject constructor () : CacheProvider {
 
     override fun saveEvents(data: List<Event>): Observable<List<Event>> {
 //        val realm = Realm.getDefaultInstance()

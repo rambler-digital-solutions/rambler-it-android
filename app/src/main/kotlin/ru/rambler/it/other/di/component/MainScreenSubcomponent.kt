@@ -1,12 +1,12 @@
 package ru.rambler.it.other.di.component
 
-import dagger.Component
+import dagger.Subcomponent
 import ru.rambler.it.other.di.module.MainScreenModule
 import ru.rambler.it.other.di.scope.PerActivity
 import ru.rambler.it.presentation.view.activities.MainActivity
 
 @PerActivity
-@Component(dependencies = arrayOf(AppComponent::class), modules = arrayOf(MainScreenModule::class))
-interface MainScreenComponent {
+@Subcomponent(modules = arrayOf(MainScreenModule::class))
+interface MainScreenSubcomponent {
     fun inject(activity: MainActivity)
 }
