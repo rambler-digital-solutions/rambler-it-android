@@ -7,6 +7,8 @@ import org.mockito.Mockito.*
 import ru.rambler.it.data.dbo.EventDbo
 import ru.rambler.it.data.dto.*
 import ru.rambler.it.data.mappers.EventMapper
+import ru.rambler.it.domain.entities.Brand
+import ru.rambler.it.domain.entities.Event
 import rx.Observable
 import rx.observers.TestSubscriber
 import java.io.File

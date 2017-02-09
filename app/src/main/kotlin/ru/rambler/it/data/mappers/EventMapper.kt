@@ -1,7 +1,7 @@
 package ru.rambler.it.data.mappers
 
 import ru.rambler.it.data.dbo.EventDbo
-import ru.rambler.it.data.dto.Event
+import ru.rambler.it.domain.entities.Event
 
 class EventMapper : DataMapper<Event, EventDbo> {
 

@@ -1,14 +1,14 @@
 package ru.rambler.it.data
 
 import ru.rambler.it.data.cache.CacheProvider
-import ru.rambler.it.data.dbo.EventDbo
 import ru.rambler.it.data.network.NetworkDataProvider
+import ru.rambler.it.domain.entities.Event
 import rx.Observable
 import java.util.*
 
 class EventsInteractor(val networkDataProvider: NetworkDataProvider, val cacheProvider: CacheProvider) {
 
-    fun getCachedEvents(): Observable<List<EventDbo>> {
+    fun getCachedEvents(): Observable<List<Event>> {
         return cacheProvider.getEventsFromCache()
     }
 

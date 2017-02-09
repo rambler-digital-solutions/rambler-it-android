@@ -3,8 +3,7 @@ package ru.rambler.it.data.mappers
 import io.realm.RealmList
 import ru.rambler.it.data.dbo.EventAttributesDbo
 import ru.rambler.it.data.dbo.LectureDbo
-import ru.rambler.it.data.dto.EventAttributes
-
+import ru.rambler.it.domain.entities.EventAttributes
 
 
 class EventAttributesMapper : DataMapper<EventAttributes, EventAttributesDbo>{

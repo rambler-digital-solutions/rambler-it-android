@@ -1,7 +1,7 @@
 package ru.rambler.it.data.mappers
 
 import ru.rambler.it.data.dbo.MaterialDbo
-import ru.rambler.it.data.dto.Material
+import ru.rambler.it.domain.entities.Material
 
 
 class MaterialMapper : DataMapper<Material, MaterialDbo> {
