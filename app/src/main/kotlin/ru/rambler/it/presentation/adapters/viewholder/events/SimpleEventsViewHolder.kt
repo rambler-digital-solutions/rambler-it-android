@@ -14,6 +14,6 @@ class SimpleEventsViewHolder(itemView: View) : AbstractEventsViewHolder(itemView
 
     override fun bind(event: Event) {
         title = itemView.findViewById(R.id.title) as TextView
-        title.text = event.attributes.brand.name
+        title.text = event.attributes?.brand?.name
     }
 }

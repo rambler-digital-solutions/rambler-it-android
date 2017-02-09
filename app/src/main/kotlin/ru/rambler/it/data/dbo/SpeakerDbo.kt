@@ -1,5 +1,6 @@
 package ru.rambler.it.data.dbo
 
+import io.realm.RealmList
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
@@ -10,5 +11,6 @@ open class SpeakerDbo(
         open var bio: String? = null,
         open var job: String? = null,
         open var company: String? = null,
-        open var image: String? = null
+        open var image: String? = null,
+        open var socialProfiles: RealmList<SocialProfileDbo>? = null
 ) : RealmObject() { }
