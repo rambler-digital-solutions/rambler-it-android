@@ -11,18 +11,18 @@ import java.util.*
 class NetworkDataProviderImpl(val eventMapper: EventMapper) : NetworkDataProvider {
 
     val api: ITRamblerApi = Retrofit.Builder()
-    .baseUrl("http://it.rambler-co.ru/")
+    .baseUrl("http://it.rambler-co.ru/api/")
     .addConverterFactory(GsonConverterFactory.create())
     .build()
     .create(ITRamblerApi::class.java)
 
     override fun getAllEvents(): Observable<List<Event>> = api.getAllEvents()
                 .subscribeOn(Schedulers.io())
-                .map { ArrayList<Event>()} //it.data.map { eventMapper.map(it) } }
+                .map { it.data.map { eventMapper.mapDto(it) }}
 
 
     override fun getEventsFromDate(modificationDate: Date): Observable<List<Event>>
             = api.getEventsModifiedSince(modificationDate.time)
             .subscribeOn(Schedulers.io())
-            .map { ArrayList<Event>() } //it.data.map { eventMapper.map(it) } }
+            .map { it.data.map { eventMapper.mapDto(it) }}
 }
