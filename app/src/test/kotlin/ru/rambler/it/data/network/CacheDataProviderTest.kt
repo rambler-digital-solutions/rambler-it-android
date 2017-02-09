@@ -5,6 +5,8 @@ import org.junit.Test
 import ru.rambler.it.data.dbo.EventDbo
 import ru.rambler.it.data.dto.*
 import ru.rambler.it.data.mappers.EventMapper
+import ru.rambler.it.domain.entities.Brand
+import ru.rambler.it.domain.entities.Event
 import java.io.File
 import java.util.*
 

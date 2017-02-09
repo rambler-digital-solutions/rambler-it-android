@@ -1,7 +1,7 @@
 package ru.rambler.it.data.mappers
 
 import ru.rambler.it.data.dbo.SpeakerDbo
-import ru.rambler.it.data.dto.Speaker
+import ru.rambler.it.domain.entities.Speaker
 
 
 class SpeakerMapper : DataMapper<Speaker, SpeakerDbo>{

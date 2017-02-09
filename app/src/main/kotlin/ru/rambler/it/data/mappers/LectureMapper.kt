@@ -4,7 +4,7 @@ import io.realm.RealmList
 import ru.rambler.it.data.dbo.LectureDbo
 import ru.rambler.it.data.dbo.MaterialDbo
 import ru.rambler.it.data.dbo.TagDbo
-import ru.rambler.it.data.dto.Lecture
+import ru.rambler.it.domain.entities.Lecture
 
 
 class LectureMapper : DataMapper<Lecture, LectureDbo> {

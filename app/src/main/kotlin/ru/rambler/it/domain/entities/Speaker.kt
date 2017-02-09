@@ -1,6 +1,7 @@
-package ru.rambler.it.data.dto
+package ru.rambler.it.domain.entities
 
 import com.google.gson.annotations.SerializedName
+import ru.rambler.it.data.dto.ParentBe
 
 data class Speaker(val id: Int,
                    @SerializedName("first_name") val firstName: String,
@@ -9,5 +10,5 @@ data class Speaker(val id: Int,
                    val job: String,
                    val company: String,
                    val image: String?,
-                   @SerializedName("social_profiles") val socialProfiles: List<SocialProfile>) : ParentDto {
+                   @SerializedName("social_profiles") val socialProfiles: List<SocialProfile>) : ParentBe {
 }

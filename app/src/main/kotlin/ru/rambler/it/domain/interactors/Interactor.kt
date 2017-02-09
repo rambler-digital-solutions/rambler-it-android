@@ -9,7 +9,7 @@ import rx.schedulers.Schedulers
 
 
 abstract class Interactor<P, R>(protected val networkProvider: NetworkDataProvider,
-                                protected val databaseProvider: CacheProvider,
+                                protected val cacheProvider: CacheProvider,
                                 protected val threadExecutor: ThreadExecutor,
                                 protected val postExecutionThread: PostExecutionThread) {
 

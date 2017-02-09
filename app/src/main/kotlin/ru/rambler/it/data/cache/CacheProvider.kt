@@ -1,11 +1,13 @@
 package ru.rambler.it.data.cache
 
-import ru.rambler.it.data.dbo.EventDbo
-
+import ru.rambler.it.domain.entities.Event
 import rx.Observable
 
 
 interface CacheProvider {
-    fun saveEvents(data: List<EventDbo>): Observable<List<EventDbo>>
-    fun getEventsFromCache(): Observable<List<EventDbo>>
+
+    fun saveEvents(data: List<Event>): Observable<List<Event>>
+
+    fun getEventsFromCache(): Observable<List<Event>>
+
 }
