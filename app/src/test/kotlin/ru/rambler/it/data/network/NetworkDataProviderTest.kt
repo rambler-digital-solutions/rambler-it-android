@@ -1,31 +1,38 @@
 package ru.rambler.it.data.network
 
+import com.google.gson.Gson
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.*
+import ru.rambler.it.data.dbo.EventDbo
 import ru.rambler.it.data.dto.*
+import ru.rambler.it.data.mappers.EventMapper
+import ru.rambler.it.domain.entities.Brand
+import ru.rambler.it.domain.entities.Event
 import rx.Observable
 import rx.observers.TestSubscriber
+import java.io.File
 import java.util.*
 
 class NetworkDataProviderTest {
 
     lateinit var dataProvider: NetworkDataProviderImpl
     lateinit var api: ITRamblerApi
-
-    lateinit var testSubscriber : TestSubscriber<List<Event>>
+    lateinit var eventMapper: EventMapper
+    lateinit var testSubscriber : TestSubscriber<List<EventDbo>>
 
     @Before
     fun setUp() {
         api = mock(ITRamblerApi::class.java)
         dataProvider = NetworkDataProviderImpl(api)
         testSubscriber = TestSubscriber.create()
+        eventMapper = EventMapper()
     }
 
     @Test
     fun testGetAllEvents_whenEmpty_noItems() {
         // arrange
-        val emptyResult: List<Event> = emptyList()
+        val emptyResult: List<EventDbo> = emptyList()
         `when`(api.getAllEvents()).thenReturn(Observable.just(EventsCollection(emptyResult)))
 
         // act
@@ -102,11 +109,27 @@ class NetworkDataProviderTest {
         verify(api).getEventsModifiedSince(modificationTimestamp)
     }
 
+    @Test
+    fun testMap_DTO_in_DBO() {
+        val file = File(javaClass.classLoader.getResource("test_events_response.json").path)
+        val eventInput = Gson().fromJson<EventsCollection>(file.readText(), EventsCollection::class.java).data
+        val eventOutput = ArrayList<EventDbo>()
+
+        eventInput.mapTo(eventOutput){ eventMapper.map(it) }
+
+        assert(eventInput.size == eventOutput.size)
+        assert(eventInput[3].attributes.lectures[1].speaker.firstName == eventOutput[3].attributes!!.lectures!![1].speaker!!.firstName)
+    }
+
     private fun createTestEvent(): Event {
         val id = Random().nextInt()
         val name = "event" + id.toString()
         return Event(id, name, attributes = EventAttributes("asd", "asd", Date(), Date(), null, null, false,
                 Brand(1, "brand", "description", "homePage", "logo"),
                 Tech(1, "Android", "#00FF00"), emptyList()))
+    }
+
+    private fun createTestEventDbo(): EventDbo {
+        return eventMapper.map(createTestEvent())
     }
 }

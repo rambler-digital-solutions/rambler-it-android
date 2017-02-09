@@ -1,6 +1,7 @@
-package ru.rambler.it.data.dto
+package ru.rambler.it.domain.entities
 
 import com.google.gson.annotations.SerializedName
+import ru.rambler.it.data.dto.ParentBe
 import java.util.*
 
 data class EventAttributes(val name: String, val kind: String,
@@ -11,5 +12,5 @@ data class EventAttributes(val name: String, val kind: String,
                            val deleted: Boolean = false,
                            val brand: Brand,
                            val tech: Tech,
-                           val lectures: List<Lecture>) {
+                           val lectures: List<Lecture>) : ParentBe {
 }

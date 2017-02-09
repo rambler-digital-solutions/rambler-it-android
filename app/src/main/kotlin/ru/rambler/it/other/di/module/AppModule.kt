@@ -3,6 +3,9 @@ package ru.rambler.it.other.di.module
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import ru.rambler.it.data.mappers.EventMapper
+import ru.rambler.it.data.network.NetworkDataProvider
+import ru.rambler.it.data.network.NetworkDataProviderImpl
 import ru.rambler.it.presentation.RamblerITApplication
 import javax.inject.Singleton
 
@@ -13,5 +16,11 @@ class AppModule(private val application: RamblerITApplication) {
     @Singleton
     fun provideAppContext(): Context {
         return application.applicationContext
+    }
+
+    @Provides
+    @Singleton
+    fun provideNetworkDataProvider(): NetworkDataProvider {
+        return NetworkDataProviderImpl(EventMapper())
     }
 }
