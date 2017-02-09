@@ -30,7 +30,7 @@ class RealmCacheProvider(val eventMapper: EventMapper) : CacheProvider {
         val realm = Realm.getDefaultInstance()
         try {
             realm.where(EventDbo::class.java)
-                    .findAllAsync()
+                    .findAll()
                     .mapTo(result) { eventMapper.mapFromDbo(it) }
         } catch (e: Exception) {
             println(e)
