@@ -3,8 +3,8 @@ package ru.rambler.it.presentation.view.activities
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import ru.rambler.it.R
-import ru.rambler.it.other.di.getAppComponent
-import ru.rambler.it.other.di.module.MainScreenModule
+import ru.rambler.it.presentation.internal.di.getAppComponent
+import ru.rambler.it.presentation.internal.di.module.MainScreenModule
 import ru.rambler.it.presentation.adapters.EventsAdapter
 import ru.rambler.it.presentation.presenter.MainScreenPresenter
 import ru.rambler.it.presentation.view.interfaces.MainScreenView

@@ -1,4 +1,4 @@
-package ru.rambler.it.other.di.scope
+package ru.rambler.it.presentation.internal.di.scope
 
 import javax.inject.Scope
 

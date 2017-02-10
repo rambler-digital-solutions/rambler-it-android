@@ -1,4 +1,4 @@
-package ru.rambler.it.other.di.module
+package ru.rambler.it.presentation.internal.di.module
 
 import dagger.Module
 import ru.rambler.it.data.cache.CacheProvider

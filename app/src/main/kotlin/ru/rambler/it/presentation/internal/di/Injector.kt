@@ -1,9 +1,9 @@
-package ru.rambler.it.other.di
+package ru.rambler.it.presentation.internal.di
 
-import ru.rambler.it.other.di.component.AppComponent
-import ru.rambler.it.other.di.component.DaggerAppComponent
-import ru.rambler.it.other.di.module.AppModule
 import ru.rambler.it.presentation.RamblerITApplication
+import ru.rambler.it.presentation.internal.di.component.AppComponent
+import ru.rambler.it.presentation.internal.di.component.DaggerAppComponent
+import ru.rambler.it.presentation.internal.di.module.AppModule
 import java.util.*
 
 private var appComponent: AppComponent? = null

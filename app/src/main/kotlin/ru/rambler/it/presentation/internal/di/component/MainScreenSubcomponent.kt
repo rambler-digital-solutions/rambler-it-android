@@ -1,8 +1,8 @@
-package ru.rambler.it.other.di.component
+package ru.rambler.it.presentation.internal.di.component
 
 import dagger.Subcomponent
-import ru.rambler.it.other.di.module.MainScreenModule
-import ru.rambler.it.other.di.scope.PerActivity
+import ru.rambler.it.presentation.internal.di.module.MainScreenModule
+import ru.rambler.it.presentation.internal.di.scope.PerActivity
 import ru.rambler.it.presentation.view.activities.MainActivity
 
 @PerActivity

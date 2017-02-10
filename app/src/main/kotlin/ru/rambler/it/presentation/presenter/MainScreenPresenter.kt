@@ -4,7 +4,7 @@ import android.os.Bundle
 import ru.rambler.it.domain.entities.Event
 import ru.rambler.it.domain.interactors.EventsInteractor
 import ru.rambler.it.domain.interactors.LocalEventsInteractor
-import ru.rambler.it.other.di.scope.PerActivity
+import ru.rambler.it.presentation.internal.di.scope.PerActivity
 import ru.rambler.it.presentation.view.interfaces.MainScreenView
 import java.util.*
 
