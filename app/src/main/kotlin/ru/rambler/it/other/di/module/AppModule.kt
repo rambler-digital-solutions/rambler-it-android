@@ -24,16 +24,18 @@ class AppModule(private val application: RamblerITApplication) {
         return application.applicationContext
     }
 
+    private val eventMapper = EventMapper()
+
     @Provides
     @Singleton
     fun provideNetworkDataProvider(): NetworkDataProvider {
-        return NetworkDataProviderImpl(EventMapper())
+        return NetworkDataProviderImpl(eventMapper)
     }
 
     @Provides
     @Singleton
     fun provideCacheProvider(): CacheProvider {
-        return RealmCacheProvider()
+        return RealmCacheProvider(eventMapper)
     }
 
     @Provides
