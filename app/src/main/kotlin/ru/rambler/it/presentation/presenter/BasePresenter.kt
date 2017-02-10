@@ -7,7 +7,7 @@ import ru.rambler.it.presentation.view.interfaces.BaseView
 @Suppress("UNUSED_PARAMETER")
 abstract class BasePresenter<out V : BaseView>(val view: V) {
 
-    fun onCreate(state: Bundle?) {
+    open fun onCreate(state: Bundle?) {
     }
 
     fun onViewCreated() {

@@ -1,6 +1,6 @@
 package ru.rambler.it.data.network
 
-import ru.rambler.it.data.dto.Event
+import ru.rambler.it.domain.entities.Event
 import rx.Observable
 import java.util.*
 
