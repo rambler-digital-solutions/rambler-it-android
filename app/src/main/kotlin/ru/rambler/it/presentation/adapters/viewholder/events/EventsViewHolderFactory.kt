@@ -4,16 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import ru.rambler.it.R
 import ru.rambler.it.domain.entities.Event
-import ru.rambler.it.presentation.adapters.viewholder.ViewHolderFactory
 
-class EventsViewHolderFactory : ViewHolderFactory<Event, AbstractEventsViewHolder> {
+class EventsViewHolderFactory  {
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): AbstractEventsViewHolder {
+    fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): AbstractEventsViewHolder {
         val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.event_list_item, parent, false)
         return SimpleEventsViewHolder(itemView)
     }
 
-    override fun getItemViewType(be: Event, position: Int): Int {
+    fun getItemViewType(event: Event, position: Int): Int {
         return R.layout.event_list_item
     }
 }
