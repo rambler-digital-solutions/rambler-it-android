@@ -8,8 +8,7 @@ import rx.Observable
 import javax.inject.Inject
 
 class RealmCacheProvider @Inject constructor(val eventMapper: EventMapper) : CacheProvider {
-
-
+    
     override fun saveEvents(data: List<Event>): Observable<List<Event>> {
         return Observable.from(data)
                 .map { eventMapper.mapToDbo(it) }
@@ -39,5 +38,6 @@ class RealmCacheProvider @Inject constructor(val eventMapper: EventMapper) : Cac
                 .flatMapIterable {it}
                 .map { eventMapper.mapFromDbo(it) }
                 .toList()
+
     }
 }
