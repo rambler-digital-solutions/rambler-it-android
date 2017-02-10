@@ -6,9 +6,6 @@ import ru.rambler.it.R
 import ru.rambler.it.domain.entities.Event
 import ru.rambler.it.presentation.adapters.viewholder.ViewHolderFactory
 
-/**
- * Created by a.tkachenko on 09.02.17.
- */
 class EventsViewHolderFactory : ViewHolderFactory<Event, AbstractEventsViewHolder> {
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): AbstractEventsViewHolder {
