@@ -7,6 +7,6 @@ class RamblerITApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        initializeAppComponent(this);
+        initializeAppComponent(this)
     }
 }
