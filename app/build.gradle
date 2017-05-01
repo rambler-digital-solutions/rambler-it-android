@@ -69,5 +69,5 @@ dependencies {
 
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
-    compile 'com.github.robohorse:rocketgame:1.0.2'
+    compile 'com.github.robohorse:rocketgame:1.0.3'
 }
