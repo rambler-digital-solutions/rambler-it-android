@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import butterknife.bindView
 import ru.rambler.it.R
 import ru.rambler.it.presentation.BaseFragment
 
@@ -21,10 +22,14 @@ class EventFragment : BaseFragment() {
         }
     }
 
+    private val rootLayout by bindView<LinearLayout>(R.id.root_layout)
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater?.inflate(R.layout.fragment_event, container, false)
-        rootView?.findViewById<LinearLayout>(R.id.root_layout)
-                ?.setBackgroundColor(arguments.getInt(ARG_COLOR))
-        return rootView
+        return inflater?.inflate(R.layout.fragment_event, container, false)
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        rootLayout.setBackgroundColor(arguments.getInt(ARG_COLOR))
     }
 }

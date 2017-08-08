@@ -6,7 +6,6 @@ import ru.rambler.it.R
 import ru.rambler.it.presentation.BasePresenter
 
 class MainScreenPresenter(@NonNull view: MainScreenView) : BasePresenter<MainScreenView>(view) {
-
     fun onNavigateTo(@IdRes buttonRes: Int) {
         when (buttonRes) {
             R.id.navigate_event_pager -> view.openEventPager()
