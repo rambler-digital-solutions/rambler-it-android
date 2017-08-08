@@ -19,22 +19,28 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/navigate_event_pager"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:background="#cc5555" />
+            android:background="#cc5555"
+            android:orientation="horizontal" />
 
         <LinearLayout
+            android:id="@+id/navigate_navigation"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:background="#55cc55" />
+            android:background="#55cc55"
+            android:orientation="horizontal" />
 
         <LinearLayout
+            android:id="@+id/navigate_search"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:background="#5555cc" />
+            android:background="#5555cc"
+            android:orientation="horizontal" />
     </LinearLayout>
 
 </LinearLayout>
