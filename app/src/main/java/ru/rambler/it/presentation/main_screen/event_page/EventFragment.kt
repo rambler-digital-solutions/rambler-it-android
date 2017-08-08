@@ -10,7 +10,7 @@ import ru.rambler.it.presentation.BaseFragment
 
 class EventFragment : BaseFragment() {
     companion object {
-        const val ARG_COLOR: String = "arg_color"
+        private const val ARG_COLOR: String = "arg_color"
 
         fun newInstance(color: Int): EventFragment {
             val fragment = EventFragment()

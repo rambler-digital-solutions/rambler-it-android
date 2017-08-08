@@ -14,7 +14,7 @@ class EventPagerFragment : BaseFragment() {
         fun newInstance(): EventPagerFragment = EventPagerFragment()
     }
 
-    lateinit var eventPager: ViewPager
+    private lateinit var eventPager: ViewPager
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater?.inflate(R.layout.fragment_event_pager, container, false)
@@ -22,7 +22,7 @@ class EventPagerFragment : BaseFragment() {
         return rootView
     }
 
-    fun setupEventPager(rootView: View) {
+    private fun setupEventPager(rootView: View) {
         eventPager = rootView.findViewById<ViewPager>(R.id.event_pager)!!
         eventPager.adapter = EventPagerAdapter(
                 listOf(Color.BLUE, Color.CYAN, Color.YELLOW),
