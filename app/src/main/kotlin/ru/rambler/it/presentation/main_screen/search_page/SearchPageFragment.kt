@@ -1,13 +1,13 @@
 package ru.rambler.it.presentation.main_screen.search_page
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ru.rambler.it.R
-import ru.rambler.it.presentation.BaseFragment
 
-class SearchPageFragment : BaseFragment() {
+class SearchPageFragment : Fragment() {
     companion object {
         fun newInstance(): SearchPageFragment {
             return SearchPageFragment()

@@ -1,15 +1,15 @@
 package ru.rambler.it.presentation.main_screen.event_page
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import butterknife.bindView
 import ru.rambler.it.R
-import ru.rambler.it.presentation.BaseFragment
 
-class EventFragment : BaseFragment() {
+class EventFragment : Fragment() {
     companion object {
         private const val ARG_COLOR: String = "arg_color"
 

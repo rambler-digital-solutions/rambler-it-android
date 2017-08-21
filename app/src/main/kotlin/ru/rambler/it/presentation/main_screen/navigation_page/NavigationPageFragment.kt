@@ -1,13 +1,13 @@
 package ru.rambler.it.presentation.main_screen.navigation_page
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ru.rambler.it.R
-import ru.rambler.it.presentation.BaseFragment
 
-class NavigationPageFragment : BaseFragment() {
+class NavigationPageFragment : Fragment() {
     companion object {
         fun newInstance(): NavigationPageFragment {
             return NavigationPageFragment()

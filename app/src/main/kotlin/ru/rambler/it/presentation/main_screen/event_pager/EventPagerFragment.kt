@@ -2,15 +2,15 @@ package ru.rambler.it.presentation.main_screen.event_pager
 
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import butterknife.bindView
 import ru.rambler.it.R
-import ru.rambler.it.presentation.BaseFragment
 
-class EventPagerFragment : BaseFragment() {
+class EventPagerFragment : Fragment() {
     companion object {
         fun newInstance(): EventPagerFragment = EventPagerFragment()
     }
