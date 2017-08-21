@@ -33,30 +33,26 @@ class MainScreenActivity : BaseActivity(), MainScreenView {
     }
 
     override fun openEventPager() {
-        if (findCurrentFragment() !is EventPagerFragment) {
-            replaceContent(EventPagerFragment.newInstance())
-        }
+        replaceContent { EventPagerFragment.newInstance() }
     }
 
     override fun openNavigationPage() {
-        if (findCurrentFragment() !is NavigationPageFragment) {
-            replaceContent(NavigationPageFragment.newInstance())
-        }
+        replaceContent { NavigationPageFragment.newInstance() }
     }
 
     override fun openSearchPage() {
-        if (findCurrentFragment() !is SearchPageFragment) {
-            replaceContent(SearchPageFragment.newInstance())
-        }
+        replaceContent { SearchPageFragment.newInstance() }
     }
 
     private fun findCurrentFragment(): Fragment? {
         return supportFragmentManager.findFragmentById(page_container.id)
     }
 
-    private fun replaceContent(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.page_container, fragment)
-                .commit()
+    private inline fun <reified T : Fragment> replaceContent(createFragment: () -> T) {
+        if (findCurrentFragment() !is T) {
+            supportFragmentManager.beginTransaction()
+                    .replace(R.id.page_container, createFragment())
+                    .commit()
+        }
     }
 }
