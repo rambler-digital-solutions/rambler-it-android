@@ -23,5 +23,5 @@ data class Speaker(
         var image: String? = null,
         @SerializedName("social_profiles")
         @Expose
-        var socialProfiles: List<Any> = ArrayList()
+        var socialProfiles: List<SocialProfile> = ArrayList()
 )

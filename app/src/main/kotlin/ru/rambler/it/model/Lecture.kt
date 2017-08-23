@@ -11,9 +11,9 @@ data class Lecture(
         @Expose
         var description: String? = null,
         @Expose
-        var tags: List<Any> = ArrayList(),
+        var tags: List<Tag> = ArrayList(),
         @Expose
-        var materials: List<Any> = ArrayList(),
+        var materials: List<Material> = ArrayList(),
         @Expose
         var speaker: Speaker? = null
 )
