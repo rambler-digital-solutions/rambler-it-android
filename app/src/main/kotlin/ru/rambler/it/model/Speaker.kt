@@ -3,7 +3,7 @@ package ru.rambler.it.model
 import com.google.gson.annotations.SerializedName
 
 data class Speaker(
-        var id: String,
+        var id: Long,
         @SerializedName("first_name")
         var firstName: String,
         @SerializedName("last_name")

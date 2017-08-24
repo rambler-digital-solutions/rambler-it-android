@@ -15,6 +15,7 @@ class ModelTests {
         val attributes = response.data.get(0).attributes
         System.out.print(attributes.name)
         assertTrue(response.data.size == 49)
+        assertTrue(response.data[0].id == 67L)
         assertTrue(attributes.lectures.size == 1)
         assertTrue(attributes.name == "Rambler.iOS #9")
         assertNull(attributes.deletedAt)

@@ -1,7 +1,7 @@
 package ru.rambler.it.model
 
 data class Lecture(
-        var id: String,
+        var id: Long,
         var title: String,
         var description: String,
         var tags: List<Tag> = emptyList(),
