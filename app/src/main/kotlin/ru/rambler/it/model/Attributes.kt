@@ -1,33 +1,21 @@
 package ru.rambler.it.model
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class Attributes(
-        @Expose
-        var name: String? = null,
-        @Expose
-        var kind: String? = null,
+        var name: String,
+        var kind: String,
         @SerializedName("starts_at")
-        @Expose
-        var startsAt: String? = null,
+        var startsAt: String,
         @SerializedName("ends_at")
-        @Expose
-        var endsAt: String? = null,
+        var endsAt: String,
         @SerializedName("updated_at")
-        @Expose
-        var updatedAt: String? = null,
+        var updatedAt: String,
         @SerializedName("deleted_at")
-        @Expose
-        var deletedAt: String? = null,
+        var deletedAt: String,
         @SerializedName("deleted")
-        @Expose
-        var isDeleted: Boolean = false,
-        @Expose
-        var brand: Brand? = null,
-        @Expose
-        var tech: Tech? = null,
-        @Expose
-        var lectures: List<Lecture> = ArrayList()
+        var isDeleted: Boolean,
+        var brand: Brand,
+        var tech: Tech,
+        var lectures: List<Lecture> = emptyList()
 )

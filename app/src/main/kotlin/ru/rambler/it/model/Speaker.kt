@@ -1,27 +1,17 @@
 package ru.rambler.it.model
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class Speaker(
-        @Expose
-        var id: String? = null,
+        var id: String,
         @SerializedName("first_name")
-        @Expose
-        var firstName: String? = null,
+        var firstName: String,
         @SerializedName("last_name")
-        @Expose
-        var lastName: String? = null,
-        @Expose
-        var bio: String? = null,
-        @Expose
-        var job: String? = null,
-        @Expose
-        var company: String? = null,
-        @Expose
-        var image: String? = null,
+        var lastName: String,
+        var bio: String,
+        var job: String,
+        var company: String,
+        var image: String,
         @SerializedName("social_profiles")
-        @Expose
-        var socialProfiles: List<SocialProfile> = ArrayList()
+        var socialProfiles: List<SocialProfile> = emptyList()
 )
