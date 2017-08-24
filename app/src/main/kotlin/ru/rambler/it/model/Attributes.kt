@@ -1,18 +1,19 @@
 package ru.rambler.it.model
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class Attributes(
         var name: String,
         var kind: String,
         @SerializedName("starts_at")
-        var startsAt: String,
+        var startsAt: Date,
         @SerializedName("ends_at")
-        var endsAt: String,
+        var endsAt: Date,
         @SerializedName("updated_at")
-        var updatedAt: String,
+        var updatedAt: Date,
         @SerializedName("deleted_at")
-        var deletedAt: String,
+        var deletedAt: Date? = null,
         @SerializedName("deleted")
         var isDeleted: Boolean,
         var brand: Brand,
