@@ -4,19 +4,19 @@ import com.google.gson.annotations.SerializedName
 import java.util.*
 
 data class Attributes(
-        var name: String,
-        var kind: String,
+        val name: String,
+        val kind: String,
         @SerializedName("starts_at")
-        var startsAt: Date,
+        val startsAt: Date,
         @SerializedName("ends_at")
-        var endsAt: Date,
+        val endsAt: Date,
         @SerializedName("updated_at")
-        var updatedAt: Date,
+        val updatedAt: Date,
         @SerializedName("deleted_at")
-        var deletedAt: Date? = null,
+        val deletedAt: Date? = null,
         @SerializedName("deleted")
-        var isDeleted: Boolean,
-        var brand: Brand,
-        var tech: Tech,
-        var lectures: List<Lecture> = emptyList()
+        val isDeleted: Boolean,
+        val brand: Brand,
+        val tech: Tech,
+        val lectures: List<Lecture> = emptyList()
 )

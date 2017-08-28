@@ -1,7 +1,7 @@
 package ru.rambler.it.model
 
 data class Datum(
-        var type: String,
-        var id: Long,
-        var attributes: Attributes
+        val type: String,
+        val id: Long,
+        val attributes: Attributes
 )

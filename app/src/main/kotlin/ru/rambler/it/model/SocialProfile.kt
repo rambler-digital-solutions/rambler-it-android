@@ -1,6 +1,6 @@
 package ru.rambler.it.model
 
 data class SocialProfile(
-        var network: String,
-        var link: String
+        val network: String,
+        val link: String
 )

@@ -11,9 +11,10 @@ class ModelTests {
     @Test
     fun getEventsResponseTest() {
         val br = BufferedReader(InputStreamReader(readResourceStream(this, "getEventsResponse.json")))
+
         val response = Gson().fromJson(br, GetEventsResponse::class.java)
+
         val attributes = response.data.get(0).attributes
-        System.out.print(attributes.name)
         assertTrue(response.data.size == 49)
         assertTrue(response.data[0].id == 67L)
         assertTrue(attributes.lectures.size == 1)

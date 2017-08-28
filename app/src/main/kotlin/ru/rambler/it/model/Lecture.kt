@@ -1,10 +1,10 @@
 package ru.rambler.it.model
 
 data class Lecture(
-        var id: Long,
-        var title: String,
-        var description: String,
-        var tags: List<Tag> = emptyList(),
-        var materials: List<Material> = emptyList(),
-        var speaker: Speaker
+        val id: Long,
+        val title: String,
+        val description: String,
+        val tags: List<Tag> = emptyList(),
+        val materials: List<Material> = emptyList(),
+        val speaker: Speaker
 )

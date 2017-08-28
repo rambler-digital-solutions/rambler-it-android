@@ -3,10 +3,10 @@ package ru.rambler.it.model
 import com.google.gson.annotations.SerializedName
 
 data class Brand(
-        var id: Long,
-        var name: String,
-        var description: String,
+        val id: Long,
+        val name: String,
+        val description: String,
         @SerializedName("home_page")
-        var homePage: String,
-        var logo: String
+        val homePage: String,
+        val logo: String
 )

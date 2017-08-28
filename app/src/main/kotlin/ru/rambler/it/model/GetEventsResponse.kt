@@ -1,5 +1,5 @@
 package ru.rambler.it.model
 
 data class GetEventsResponse(
-        var data: List<Datum> = emptyList()
+        val data: List<Datum> = emptyList()
 )

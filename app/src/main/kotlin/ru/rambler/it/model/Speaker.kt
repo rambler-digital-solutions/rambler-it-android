@@ -3,15 +3,15 @@ package ru.rambler.it.model
 import com.google.gson.annotations.SerializedName
 
 data class Speaker(
-        var id: Long,
+        val id: Long,
         @SerializedName("first_name")
-        var firstName: String,
+        val firstName: String,
         @SerializedName("last_name")
-        var lastName: String,
-        var bio: String,
-        var job: String,
-        var company: String,
-        var image: String,
+        val lastName: String,
+        val bio: String,
+        val job: String,
+        val company: String,
+        val image: String,
         @SerializedName("social_profiles")
-        var socialProfiles: List<SocialProfile> = emptyList()
+        val socialProfiles: List<SocialProfile> = emptyList()
 )
