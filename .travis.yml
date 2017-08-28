@@ -11,6 +11,7 @@ android:
 
 script:
  - ./gradlew clean build -PdisablePreDex --continue --stacktrace
+ - ./gradlew testDebugUnitTest
 
 branches:
   only:
